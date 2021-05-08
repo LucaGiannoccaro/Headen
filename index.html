@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open('post', 'php/sliderImages.php?', true);
+        xhr.send();
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState==4 && xhr.status==200){
+                var resp = xhr.responseText;
+                console.log(resp);
+                window.localStorage.clear();
+                window.localStorage.setItem('listaImmagini', resp);
+            }
+        } 
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 1</title>
+    <link rel="stylesheet" href="css/master.css">
+    <script src="js/index.js" defer></script>
+    <script src="js/slider.js" defer></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <h1>LOGO</h1>
+        <h2>placeholder</h2>
+    </div>
+    <!-- FINE HEADER -->
+    
+    <!-- NAVBAR -->
+    <ul id="navbar">
+        <li class="navbar-item"><a href="index.html" class="navbar-link">Home</a></li>
+        <li class="navbar-item"><a href="second.html" class="navbar-link">Info</a></li>
+        <li class="navbar-item"><a href="login.html" class="navbar-link">Login</a></li>
+        <li class="navbar-item"><a href="signup.html" class="navbar-link">Sign up</a></li>
+        <li class="navbar-item"><a href="admin.html" class="navbar-link">Admin</a></li>
+    </ul>
+
+    <!-- FINE NAVBAR -->
+
+    <div id="banner">
+        <!-- <img src="immagini/banner2.jpg" alt="" id="banner"> -->
+        <div id="slider">
+            <p id="prev">&#60</p>
+            <p id="next">&#62</p> 
+        </div>
+    </div> 
+    
+    
+    <div id="top-box-container">
+        <div class="top-box">
+            <img src="immagini/banner2.jpg" alt="">
+            <div class="text-box">
+                <h3>Lroem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, quod expedita nostrum laboriosam alias laudantium obcaecati aliquam mollitia sit vel!Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia omnis sunt tenetur vero tempora ipsam doloribus dolor numquam natus. Dolore.Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla obcaecati minus exercitationem quibusdam et iste.</p>    
+            </div>
+        </div>
+        <div class="top-box">
+            <img src="immagini/banner2.jpg" alt="">
+            <div class="text-box">
+                <h3>Lroem Ipsum</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic exercitationem soluta sit doloribus delectus culpa et asperiores magnam vitae optio fuga non tenetur inventore minima explicabo corrupti, esse omnis error! Quae, atque? Ab id harum eveniet in, velit temporibus asperiores?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla obcaecati minus exercitationem quibusdam et iste.</p>    
+            </div>
+        </div>
+    </div>    
+    <hr id="hr"> 
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>COPYRIGHT &copy <b>2021</b></p>
+        <div class="link-social">
+            <a href=""><img src="immagini/instagram (1).png" class="icon"></a>
+            <a href=""><img src="immagini/youtube (1).png" class="icon"></a>
+            <a href=""><img src="immagini/whatsapp.png" class="icon"></a>
+        </div>
+        
+    </div>
+    <!-- FINE FOOTER -->
+
+</body>
+</html>

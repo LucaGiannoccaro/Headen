@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 1</title>
+    <link rel="stylesheet" href="css/master.css">
+    <script src="js/index.js" defer></script>
+    <script src="js/admin.js" defer></script>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <h1>LOGO</h1>
+        <h2>placeholder</h2>
+    </div>
+    <!-- FINE HEADER -->
+    
+    <!-- NAVBAR -->
+    <ul id="navbar">
+        <li class="navbar-item"><a href="index.html" class="navbar-link">Home</a></li>
+        <li class="navbar-item"><a href="second.html" class="navbar-link">Info</a></li>
+        <li class="navbar-item"><a href="login.html" class="navbar-link">Login</a></li>
+        <li class="navbar-item"><a href="signup.html" class="navbar-link">Sign up</a></li>
+        <li class="navbar-item"><a href="contattati.html" class="navbar-link">Contact</a></li>
+    </ul>
+
+    <!-- FINE NAVBAR -->
+
+   
+
+
+   <div class="container">
+       <div id="data-container"></div>
+   </div>
+
+   <div class="container">
+    <div class="login">
+         <form action="php/upload.php" method="post" enctype="multipart/form-data">
+             <div class="vertical">
+                 <input type="file" name="fileToUpload" id="fileToUpload">
+                 <input type="text" name="nome" id="nome" placeholder="Nome della nuova immagine">
+                 <input type="submit" value="Upload Image" name="submit" id="submit">
+             </div>
+         </form>
+    </div>
+</div>
+
+   <hr>
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>COPYRIGHT &copy <b>2021</b></p>
+        <div class="link-social">
+            <a href=""><img src="immagini/instagram (1).png" class="icon"></a>
+            <a href=""><img src="immagini/youtube (1).png" class="icon"></a>
+            <a href=""><img src="immagini/whatsapp.png" class="icon"></a>
+        </div>
+        
+    </div>
+    <!-- FINE FOOTER -->
+
+</body>
+</html>
