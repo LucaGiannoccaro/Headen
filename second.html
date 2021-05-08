@@ -4,10 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prova 1</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', ()=>{
+            var button = document.querySelector('#mobile-navbar-button p');
+            var navbar = document.getElementById('navbar');
+            button.addEventListener('click', ()=>{
+                console.log(navbar.style)
+                console.log(navbar.style.display)
+                if(navbar.style.display == 'flex')
+                    navbar.style.display = 'none';
+                else 
+                    navbar.style.display = 'flex';
+            })
+        })
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 1</title>
     <link rel="stylesheet" href="css/master.css">
-    <script src="js/index.js" defer></script>
-</head>
-<body>
+    <link rel="stylesheet" href="css/style.mini.css">
+    </head>
+    <body>
     <!-- HEADER -->
     <div class="header">
         <h1>LOGO</h1>
@@ -16,12 +33,15 @@
     <!-- FINE HEADER -->
 
     <!-- NAVBAR -->
+    <div id="mobile-navbar-button">
+        <p>&#x2630</p>
+    </div>
     <ul id="navbar">
         <li class="navbar-item"><a href="index.html" class="navbar-link">Home</a></li>
-        <li class="navbar-item"><a href="second.html" class="navbar-link">Info</a></li>
+        <li class="navbar-item"><a href="second.html" class="navbar-link active">Info</a></li>
         <li class="navbar-item"><a href="login.html" class="navbar-link">Login</a></li>
         <li class="navbar-item"><a href="signup.html" class="navbar-link">Sign up</a></li>
-        <li class="navbar-item"><a href="contattati.html" class="navbar-link">Contact</a></li>
+        <li class="navbar-item"><a href="admin.html" class="navbar-link">Admin</a></li>
     </ul>
     <!-- FINE NAVBAR -->
 

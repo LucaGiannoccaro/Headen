@@ -1,21 +1,9 @@
-var immagini;
-function richiestaImmagini(){
-    var xhr = new XMLHttpRequest();
-    xhr.open('post', 'php/sliderImages.php?', true);
-    xhr.send();
-    xhr.onreadystatechange = function(){
-        if(xhr.readyState==4 && xhr.status==200){
-            var resp = xhr.responseText;
-            immagini = JSON.parse(resp);  
-            window.localStorage.clear();
-            window.localStorage.setItem('listaImmagini', resp);
-        }
-    } 
-}
-
 //set the first image of the slider, as the first element in the imageslider databese's table
-var banner = document.querySelector('#banner');
+var banner = document.getElementById('banner');
+console.log(banner);
+
 var listaImmagini = JSON.parse(window.localStorage.getItem('listaImmagini')); //local storage is created for the first time, by index.html
+console.log(listaImmagini);
 banner.style.backgroundImage = "url('" + listaImmagini[0][2] + "')"; 
 
 

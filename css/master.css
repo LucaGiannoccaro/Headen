@@ -21,6 +21,21 @@ body {
 
 
 /* NAVBAR -------------------------------------------*/
+
+#mobile-navbar-button {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: #16181D;
+
+}
+
+#mobile-navbar-button p {
+    padding: 2%;
+    color: #F0EBE3;
+
+}
+
 #navbar{
     display: flex;
     justify-content: space-around;
@@ -37,14 +52,11 @@ body {
 
 .navbar-link{
     text-decoration: none;
+    color: #F0EBE3;
 }
 
 .active {
     color: #6B7F8B;
-}
-
-.normal {
-    color: #F0EBE3;
 }
 
 .navbar-link:hover{
@@ -216,6 +228,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     margin-top: 3%;
 }
 

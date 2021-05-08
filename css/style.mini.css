@@ -1,0 +1,86 @@
+@media screen and (max-width: 600px) {
+    
+    #mobile-navbar-button {
+        display: flex;
+    }
+    
+    #mobile-navbar-button p {
+        padding: 2%;
+        color: #F0EBE3;
+        cursor: pointer;
+        font-size: 150%;
+    }
+
+    #navbar{
+        display: none;
+        flex-direction: column;
+        position: static;
+        height: 40%;
+    }
+    #navbar li{
+        margin: 2% 0;
+    }
+    
+    #top-box-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3%;
+    }
+
+    .top-box img{
+        width: 95%;
+    }
+
+    .footer{
+        display: flex;
+        flex-direction: column;
+    }
+    .footer p{
+       margin-top: 3%;
+    }
+
+
+    .bottom-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .box, #card-box{
+        width: 95%;
+        margin: 2% 0;
+    }
+
+    .card {
+        margin: 3% 0;
+    }
+
+
+    .item {
+        flex-direction: column;
+        margin: 2% 0;
+    }
+
+    .item img {
+        width: 100%;
+    }
+
+    .item .testo {
+       flex-direction: column;
+    }
+
+    .item .testo p{
+        margin: 2% 0;
+     }
+
+     .item .freccie{
+         margin-bottom: 2%;
+    }
+
+}

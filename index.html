@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="js/slider.js" defer></script>
     <script>
         var xhr = new XMLHttpRequest();
         xhr.open('post', 'php/sliderImages.php?', true);
@@ -13,13 +14,25 @@
                 window.localStorage.setItem('listaImmagini', resp);
             }
         } 
+        document.addEventListener('DOMContentLoaded', ()=>{
+            var button = document.querySelector('#mobile-navbar-button p');
+            var navbar = document.getElementById('navbar');
+            button.addEventListener('click', ()=>{
+                console.log(navbar.style)
+                console.log(navbar.style.display)
+                if(navbar.style.display == 'flex')
+                    navbar.style.display = 'none';
+                else 
+                    navbar.style.display = 'flex';
+            })
+        })
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prova 1</title>
     <link rel="stylesheet" href="css/master.css">
-    <script src="js/index.js" defer></script>
-    <script src="js/slider.js" defer></script>
+    <link rel="stylesheet" href="css/style.mini.css">
+    
 </head>
 <body>
     <!-- HEADER -->
@@ -30,8 +43,11 @@
     <!-- FINE HEADER -->
     
     <!-- NAVBAR -->
+    <div id="mobile-navbar-button">
+        <p>&#x2630</p>
+    </div>
     <ul id="navbar">
-        <li class="navbar-item"><a href="index.html" class="navbar-link">Home</a></li>
+        <li class="navbar-item"><a href="index.html" class="navbar-link active">Home</a></li>
         <li class="navbar-item"><a href="second.html" class="navbar-link">Info</a></li>
         <li class="navbar-item"><a href="login.html" class="navbar-link">Login</a></li>
         <li class="navbar-item"><a href="signup.html" class="navbar-link">Sign up</a></li>
@@ -41,7 +57,6 @@
     <!-- FINE NAVBAR -->
 
     <div id="banner">
-        <!-- <img src="immagini/banner2.jpg" alt="" id="banner"> -->
         <div id="slider">
             <p id="prev">&#60</p>
             <p id="next">&#62</p> 

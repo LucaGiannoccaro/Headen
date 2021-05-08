@@ -1,6 +1,6 @@
 <?php
-$target_dir = "../immagini/slider/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$cartellaDestinazione = "../immagini/slider/";
+$target_file = $cartellaDestinazione.basename($_FILES["fileToUpload"]["name"]);
 echo $_FILES["fileToUpload"]["name"];
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
