@@ -13,13 +13,11 @@ function richiestaImmagini(){
     } 
 }
 
+//set the first image of the slider, as the first element in the imageslider databese's table
 var banner = document.querySelector('#banner');
-
-
-var listaImmagini = JSON.parse(window.localStorage.getItem('listaImmagini'));
+var listaImmagini = JSON.parse(window.localStorage.getItem('listaImmagini')); //local storage is created for the first time, by index.html
 banner.style.backgroundImage = "url('" + listaImmagini[0][2] + "')"; 
 
-console.log(listaImmagini)
 
 var current = 0;
 var next = document.querySelector('#next');
