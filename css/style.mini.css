@@ -24,10 +24,11 @@
     #top-box-container {
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .top-box {
-        width: 100%;
+        width: 95%;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -48,17 +49,31 @@
 
 
     .bottom-box {
-        flex-direction: column;
+        display: flex;
         align-items: center;
+        flex-flow: column nowrap;
     }
 
-    .box, #card-box{
+    .box{
+        width: 95%;
+        margin: 2% 0;
+    }
+
+    #card-box{
+        display: flex;
+        flex-direction: column;
         width: 95%;
         margin: 2% 0;
     }
 
     .card {
         margin: 3% 0;
+    }
+
+
+    .login{
+        width: 95%;
+        margin-bottom: 3%;
     }
 
 

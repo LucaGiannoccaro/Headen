@@ -1,3 +1,62 @@
+<?php
+
+        
+$errore="<h4 style='color: green;'>Registrazione avvenuta con successo!</h4>";
+    if(isset($_POST['submit'])){
+        $database = mysqli_connect('localhost', 'root', '', 'sitoScuola');
+        if (!$database) {
+            die;
+        }
+        $nome = $_POST['nome'];
+        $cognome = $_POST['cognome'];
+        $email = $_POST['email'];
+        $telefono = $_POST['telefono'];
+        $nuovaPassword = $_POST['nuovaPassword'];
+        $confermaPassword = $_POST['confermaPassword'];
+
+        
+        if($nome=="")
+            $errore = "<h4 style='color: red; margin-top: 4%;'>Riempire tutti i campi!</h4>";
+        else if($cognome=="")
+            $errore = "<h4 style='color: red; margin-top: 4%;'>Riempire tutti i campi!</h4>";
+        else if($email=="")
+            $errore = "<h4 style='color: red; margin-top: 4%;'>Riempire tutti i campi!</h4>";
+        else if($telefono=="")
+            $errore = "<h4 style='color: red; margin-top: 4%;'>Riempire tutti i campi!</h4>";
+        else if($nuovaPassword=="")
+            $errore = "<h4 style='color: red; margin-top: 4%;'>Riempire tutti i campi!</h4>";
+        else if($confermaPassword=="")
+            $errore = "<h4 style='color: red; margin-top: 4%;'>Riempire tutti i campi!</h4>";
+        else if($nuovaPassword!=$confermaPassword)
+            $errore = "<h4 style='color: red; margin-top: 4%;'>Le password non combaciano!</h4>";
+        else{
+            $users = mysqli_query($database, "SELECT * FROM utenti");
+            $controllo = true;
+            while($row = mysqli_fetch_array($users)){
+                if($row['email'] == $email){
+                    $errore="<h4 style='color: red; margin-top: 4%;'>Email già usata!</h4>";
+                    $controllo=false;
+                    break;
+                }else if($row['telefono'] == $telefono){
+                    $errore="<h4 style='color: red; margin-top: 4%;'>Numero di telefono già usato!</h4>";
+                    $controllo=false;
+                    break;
+                }
+            }
+            if($controllo){
+                $statement = $database->prepare("INSERT INTO utenti(nome, cognome, email, telefono, password) VALUES(?, ?, ?, ?, ?)");
+                $statement->bind_param('sssss', $nome, $cognome, $email, $telefono, $nuovaPassword);
+                $statement->execute();
+            }
+
+        }
+        mysqli_close($database);
+    }
+
+    
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,8 +107,9 @@
 
    <div class="container">
        <div class="login">
-            <form action="php/signup.php" method="POST">
+            <form action="signup.php" method="POST">
                 <div class="vertical">
+                    
                     <div class="inline">
                         <div class="vertical">
                             <label for="nome">Nome:</label>
@@ -80,7 +140,8 @@
                             <input type="password" name="confermaPassword" id="confermaPassword" placeholder="Conferma password">
                         </div>
                     </div>
-                    <input type="submit" class="submit">
+                    <?php  echo $errore ?>
+                    <input type="submit" name ="submit" class="submit">
                 </div>
         </form>
         <p>Sei già registrato? Effettua il <a href="login.html">login</a></p>
